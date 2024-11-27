@@ -36,7 +36,8 @@ Once a CWM is instanciated, it can be trained for density estimation on a set of
 
 ```python
 samples = torch.randn(1000, 1)
-model.train(epochs = 10, batch_size = 100, verbose = True)
+model.EM_pretraining(samples, epochs = 10)
+model.train(samples, epochs = 10, batch_size = 100, verbose = True)#training
 ```
 
 We can sample from the easily. 
@@ -49,7 +50,7 @@ We can also evaluate the PDF.
 
 ```python
 test_samples = torch.randn(1000, 1)
-test_log_prob = model.log_prob(test_samples)
+test_log_prob = model.log_prob(test_samples) #pdf evaluation
 ```
 
 **Going further**
