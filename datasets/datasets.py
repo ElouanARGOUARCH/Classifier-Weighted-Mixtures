@@ -63,3 +63,4 @@ def get_FashionMNIST_dataset(one_hot = False,repository = '../../datasets/data',
         return torch.cat([train_samples, test_samples], dim = 0), torch.nn.functional.one_hot(torch.cat([train_labels,test_labels], dim = 0))
     else:
         return torch.cat([train_samples, test_samples], dim = 0), torch.cat([train_labels,test_labels], dim = 0)
+
